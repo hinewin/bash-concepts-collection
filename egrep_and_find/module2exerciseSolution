@@ -1,0 +1,140 @@
+Module 2 Exercise - Solution
+
+For all the answers, you can either use `grep -E` or `egrep` interchangeably.
+
+------------------------------------
+1. Show the filenames of files in the `cis18b` directory that have punctuation marks in the file content.
+
+   **Answer:**
+   ```bash
+   grep -E -l '[[:punct:]]' *
+   ```
+
+   We also discussed that:
+   ```bash
+   ls | grep -E -l '[[:punct:]]'
+   ```
+   doesn't give the same result.
+
+------------------------------------
+2. Show the count of the lines that have punctuation marks in each of the files of the `cis18b` directory.
+
+   **Answer:**
+   ```bash
+   grep -E -c '[[:punct:]]' *
+   ```
+
+------------------------------------
+3. Show the line number and the lines that have only punctuation marks (and nothing else on the line) in the files of the `cis18b` directory.
+
+   **Answer:**
+   ```bash
+   grep -E -n '^[[:punct:]]+$' *
+   ```
+
+   and:
+   ```bash
+   grep -E -nv '[^[:punct:]]' *
+   ```
+
+------------------------------------
+4. Show the line number and the lines that don't contain any number in the file `module1input`.
+
+   **Answer:**
+   ```bash
+   grep -E -nv '[0-9]' module1input
+   ```
+
+------------------------------------
+5. Show the line number of all lines that have only whitespace characters, for all files in the `cis18b` directory.
+
+   **Answer:**
+   ```bash
+   egrep -n '^\s+$' *
+   ```
+
+------------------------------------
+6. Go to your home directory, create 2 new files `fA` and `fB`, create a symbolic link to file `fA`, and create a directory `d2`.
+
+   **Answer:**
+   ```bash
+   touch fA fB
+   ln -s fA linkA
+   mkdir d2
+   ```
+
+   We also created a second link to a "today" directory:
+   ```bash
+   ln -s ~/today linkToday
+   ```
+
+------------------------------------
+7. Start from your home directory, find all links to file `fA`.
+
+   **Answer:**
+   ```bash
+   find ~ -lname '*fA'
+   ```
+
+   The above is different than:
+   ```bash
+   find ~ -type l
+   ```
+   which will show both links.
+
+------------------------------------
+8. Start from your home directory, find all directories that have 'd' in the name.
+
+   **Answer:**
+   ```bash
+   find ~ -type d -name '*d*'
+   ```
+
+------------------------------------
+9. Start from your home directory, find all regular files that have a size less than 1K bytes.
+
+   **Answer:**
+   ```bash
+   find ~ -type f -size -1k
+   ```
+
+------------------------------------
+10. Start from your home directory, find all files that are not regular files.
+
+    **Answer:**
+    ```bash
+    find ~ ! -type f
+    ```
+
+------------------------------------
+11. Start from your home directory, delete all regular files that are empty.
+
+    **Answer:**
+    ```bash
+    find ~ -type f -empty -exec rm -i {} \;
+    ```
+
+    If you want confirmation before delete since interactive mode works with `-exec` because `-exec` works with one file at a time.
+
+    or:
+    ```bash
+    find ~ -type f -empty | xargs rm
+    ```
+    If you want to delete without confirmation since interactive mode doesn't work with the batch processing of `xargs`.
+
+------------------------------------
+12. Start from your home directory, do the long listing of all files that are regular files.
+
+    **Answer:**
+    ```bash
+    find ~ -type f | xargs ls -l
+    ```
+
+------------------------------------
+13. Start from your home directory, update the modified time of all regular files that have modified time of less than 1 day.
+
+    **Answer:**
+    ```bash
+    find ~ -type f -mtime -1 | xargs touch
+    ```
+
