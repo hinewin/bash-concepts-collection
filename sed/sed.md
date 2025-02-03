@@ -79,7 +79,8 @@ sed -i 's/old/new/' file.txt
   - Single line (e.g., `4d` for line 4)
   - Set of lines (using regex)
   - Range of lines (e.g., `5,8d` for lines 5 through 8)
-  - Nested address
+  - Nested address (using a combination of addresses to apply commands to specific lines or ranges)
+    - Example: `sed '/start/,/end/d' file.txt` deletes all lines between those matching `/start/` and `/end/`, inclusive.
   - Not address (using `!`)
 
 ### Common sed Commands
@@ -207,4 +208,32 @@ sed -n '1,/Line/p' module3Ainput
 ```
 
 These examples are derived from the `module3exerciseSolution` file and demonstrate practical uses of `sed` commands.
+
+## Difference Between `c` and `s` Commands
+
+### `c` Command (Change)
+
+- The `c` command is used to replace entire lines that match a pattern with a new line of text.
+- It does not use regular expressions for partial replacements; instead, it replaces the whole line.
+- Example:
+  ```bash
+  sed '/pattern/c\Replacement line' file.txt
+  ```
+  This command replaces any line containing "pattern" with "Replacement line".
+
+### `s` Command (Substitute)
+
+- The `s` command is used to substitute parts of a line that match a regular expression with a replacement string.
+- It allows for partial replacements within a line and can use regular expressions for pattern matching.
+- Example:
+  ```bash
+  sed 's/old/new/' file.txt
+  ```
+  This command replaces occurrences of "old" with "new" within each line.
+
+### Key Differences
+
+- **Scope**: The `c` command operates on entire lines, while the `s` command operates on parts of lines.
+- **Usage**: Use `c` when you want to replace whole lines and `s` when you want to replace specific parts of a line.
+- **Regular Expressions**: The `s` command supports regular expressions for pattern matching, whereas the `c` command does not.
 
