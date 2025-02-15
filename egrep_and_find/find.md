@@ -65,6 +65,23 @@
 `find start_dir criteria | xargs command`
 
 - Passes found files to `command` in batches
+```bash
+find -type f -name 'module*' | xargs mv -t module/
+# -t is needed to specify a target dir
+# Without -t, xargs would mv file1 file2 file3 module
+```
+### Xargs `-I{}`
+
+The `-I` option in xargs is used to specify a placeholder for the input arguments. It's particularly useful when you need to control where the arguments are placed in the command.
+
+```bash
+xargs -I{} command {}
+```
+
+The `{}` is now a placeholder, You can use any string instead of `{}` such as `I@`
+```bash
+find -type f -name 'module*' | xargs -I{} mv {} module/
+```
 
 ## Best Practices
 
