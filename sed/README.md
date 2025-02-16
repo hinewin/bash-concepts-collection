@@ -221,6 +221,7 @@ sed -i 's/old/new/' file.txt
    - `g`: Global (apply to all matches in the line)
    - `p`: Print the modified line
    - `w`: Write the modified line to a file
+   - `I`: Ignore case
 
    ```bash
    sed -r 's/\/a/b/p' file.txt # Use `\` to escape `/`

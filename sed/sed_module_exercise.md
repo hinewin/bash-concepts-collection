@@ -1,16 +1,16 @@
 # Module 3 Exercise - Solution
 
 --------------------------------------------
-Copy the file module3Ainput from the cis18b directory to your current directory. Use this file as input for the next 10 questions.
+Referencing file: `sed_input1.txt`
 
 --------------------------------------------
-1. Run the p command of sed with the file module3Ainput but don't print duplicate lines.
+1. Run the p command of sed with the file sed_input1 but don't print duplicate lines.
 
    <details>
    <summary><strong>Answer:</strong></summary>
    
    ```bash
-   sed -n 'p' module3Ainput
+   sed -n 'p' sed_input1
    ```
 
    Explanation:
@@ -21,13 +21,13 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
    </details>
 
 --------------------------------------------
-2. Print a line number and then print each line of module3Ainput.
+2. Print a line number and then print each line of sed_input1.
 
    <details>
    <summary><strong>Answer:</strong></summary>
    
    ```bash
-   sed '=' module3Ainput
+   sed '=' sed_input1
    ```
 
    Explanation:
@@ -42,7 +42,7 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
    <summary><strong>Answer:</strong></summary>
    
    ```bash
-   sed '/line/ i NEW' module3Ainput
+   sed '/line/ i NEW' sed_input1
    ```
 
    Explanation:
@@ -58,7 +58,7 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
    <summary><strong>Answer:</strong></summary>
    
    ```bash
-   sed '/line/ s/^/NEW /' module3Ainput
+   sed '/line/ s/^/NEW /' sed_input1
    ```
 
    Explanation:
@@ -74,7 +74,7 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
    <summary><strong>Answer:</strong></summary>
    
    ```bash
-   sed '$c  This is 10' module3Ainput
+   sed '$c  This is 10' sed_input1
    ```
 
    Explanation:
@@ -90,7 +90,7 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
    <summary><strong>Answer:</strong></summary>
    
    ```bash
-   sed '/[0-9]/d' module3Ainput
+   sed '/[0-9]/d' sed_input1
    ```
 
    Explanation:
@@ -106,7 +106,9 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
    <summary><strong>Longer answer:</strong></summary>
    
    ```bash
-   sed -r '^/[^0-9]+/d' module3Ainput
+   sed -r '/^[^0-9]+$/d' sed_input1
+   # Use anchor `^` and `$` and `[^0-9]+` to match lines that don't contain a digit.
+   # The `+` is crucial, it means one or more of the preceding character.
    ```
 
    Explanation:
@@ -119,7 +121,7 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
    <summary><strong>Shorter answer:</strong></summary>
    
    ```bash
-   sed '/[0-9]/! d' module3Ainput
+   sed '/[0-9]/! d' sed_input1
    ```
 
    Explanation:
@@ -134,7 +136,7 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
    <summary><strong>Answer:</strong></summary>
    
    ```bash
-   sed 's/line/LINE/' module3Ainput
+   sed 's/line/LINE/' sed_input1
    ```
 
    Explanation:
@@ -149,7 +151,7 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
    <summary><strong>Answer:</strong></summary>
    
    ```bash
-   sed -n 's/line/LINE/p' module3Ainput
+   sed -n 's/line/LINE/p' sed_input1
    ```
 
    Explanation:
@@ -165,7 +167,7 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
     <summary><strong>Answer:</strong></summary>
     
     ```bash
-    sed -n '1,/Line/p' module3Ainput
+    sed -n '1,/Line/p' sed_input1
     ```
 
     Explanation:
@@ -178,7 +180,7 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
     <summary><strong>Or faster, especially when the input file is large:</strong></summary>
     
     ```bash
-    sed '/Line/q' module3Ainput
+    sed '/Line/q' sed_input1
     ```
 
     Explanation:
@@ -187,7 +189,7 @@ Copy the file module3Ainput from the cis18b directory to your current directory.
     </details>
 
 --------------------------------------------
-Copy the file module3Binput to your current directory. The module3Binput will be the input file for the next 3 questions below, which uses a sed script.
+### Referencing file: `sed_input2.txt`
 
 --------------------------------------------
 11. Print all lines but add a line of +++++ before and after each line.
@@ -203,7 +205,7 @@ Copy the file module3Binput to your current directory. The module3Binput will be
     ```
     To run the script:
     ```bash
-    sed -f e11.sed module3Binput
+    sed -f e11.sed sed_input2.txt
     ```
 
     Explanation:
@@ -220,7 +222,7 @@ Copy the file module3Binput to your current directory. The module3Binput will be
     <summary><strong>Answer:</strong></summary>
     
     ```bash
-    sed -n '/afternoon/,$ s/;/\t/gp' module3Binput
+    sed -n '/afternoon/,$ s/;/\t/gp' sed_input2.txt
     ```
 
     Explanation:
@@ -234,7 +236,7 @@ Copy the file module3Binput to your current directory. The module3Binput will be
     <summary><strong>Or:</strong></summary>
     
     ```bash
-    sed -n '/afternoon/,$ { y/;/\t/ ; /[0-9]/ p }' module3Binput
+    sed -n '/afternoon/,$ { y/;/\t/ ; /[0-9]/ p }' sed_input2.txt
     ```
 
     Explanation:
@@ -258,7 +260,7 @@ Copy the file module3Binput to your current directory. The module3Binput will be
     ```
     Run:
     ```bash
-    sed -nf e13.sed module3Binput
+    sed -nf e13.sed sed_input2.txt
     ```
 
     Explanation:
@@ -270,7 +272,8 @@ Copy the file module3Binput to your current directory. The module3Binput will be
 
     </details>
 
-=================================================
+--------------------------------------------
+
 Extra exercise with substitute and back reference
 
 <details>
@@ -278,7 +281,7 @@ Extra exercise with substitute and back reference
 
 **Answer:**
 ```bash
-sed 's/.*/==&==/' module3Binput
+sed 's/.*/==&==/' sed_input2.txt
 ```
 
 Explanation:
@@ -286,13 +289,12 @@ Explanation:
 
 </details>
 
---------------------------------------------
 <details>
 <summary><strong>Print only the first field of CIS classes.</strong></summary>
 
 **Answer:**
 ```bash
-sed -nr '/cis/ s/(.*);.*;.*;.*;.*/\1/p' module3Binput
+sed -nr '/cis/ s/(.*);.*;.*;.*;.*/\1/p' sed_input2.txt
 ```
 
 Explanation:
