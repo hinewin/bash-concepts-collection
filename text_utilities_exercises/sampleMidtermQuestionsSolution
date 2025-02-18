@@ -1,0 +1,171 @@
+# Exercise 01 - Solutions
+
+1. Use egrep or grep -E 
+Someone used the following command line:
+	  grep -E '[[:punct:]]' * | wc -l
+Show a more efficient way to do the same work and produce the same result,
+and explain why it is more efficient.
+
+   <details>
+   <summary><strong>Answer:</strong></summary>
+   
+   ```bash
+   grep -E -c '[[:punct:]]' *
+   ```
+
+   Explanation:  
+   - It's more efficient because only one utility is used, reducing the need for piping and additional processing.
+
+   </details>
+
+--------------------------------------------
+2. Use find 
+   
+   a. Print a count of how many regular files you have in all your 
+directories
+
+   <details>
+   <summary><strong>Answer:</strong></summary>
+   
+   ```bash
+   find ~ -type f | wc -l
+   ```
+
+   </details>
+
+   
+   b. Start from the "labs" directory, which is under your current
+directory, remove all links that point to dirA 
+
+   <details>
+   <summary><strong>Answer:</strong></summary>
+   
+   ```bash
+   find ~/labs -lname '*dirA' -exec rm {} \;
+   ```
+   or:  
+   ```bash
+   find ~/labs -lname '*dirA' | xargs rm
+   ```
+
+   </details>
+
+--------------------------------------------
+3. Use sed 
+   
+   a. fileA is a forwarded email that's been saved, where each line begins with > and 1 space.  For example:
+
+   Copy fileA to a new fileB but remove the "> " in front of each line
+   and remove the first 12 lines of fileA
+
+   <details>
+   <summary><strong>Answer:</strong></summary>
+   
+   ```bash
+   sed '1,12d; s/^> // ; w fileB' fileA
+   ```
+   or:  
+   ```bash
+   sed '1,12d; s/^> //' fileA > fileB
+   ```
+
+   </details>
+
+
+   b. fileA is an essay that has multiple paragraphs. Each paragraph is
+separated from another paragraph by a blank line (a line with no 
+character except for the newline character).
+Write a sed script that prints the first paragraph of fileA, but with all
+spaces changed into underscores, and all digits removed.
+
+   <details>
+   <summary><strong>Answer:</strong></summary>
+   
+   ```bash
+   sed -nf s.sed fileA
+   ```
+
+s.sed:
+```bash
+1,/^$/ { y/ /_/
+         s/[0-9]//gp  }
+```
+or:
+```bash
+1,/^$/ { s/ /_/g
+         s/[0-9]//gp  }
+```
+
+   </details>
+
+--------------------------------------------
+4. Use awk 
+
+fileA has 10 fields, separated by semicolon (;), and all fields are
+numbers. Use fileA for all awk questions.
+
+   a. Print fields 9, then 5, then 7 of all lines where field 5 > field 7.
+   When printing the field, separate them with colon (:)
+
+   <details>
+   <summary><strong>Answer:</strong></summary>
+   
+   ```bash
+   awk 'BEGIN {FS=";"; OFS=":"}  $5 > $7 {print $9, $5, $7}' fileA
+   ```
+
+   </details>
+
+
+b. Write an awk script that prints the line number and the sum 
+of each line where the sum of all the fields is a negative number.
+Print the line number and the sum separated by a tab.
+
+   <details>
+   <summary><strong>Answer:</strong></summary>
+   
+   ```bash
+   BEGIN {FS = ";"}
+
+   { 
+     sum = 0
+     for (i = 1; i <= NF; i++)
+         sum += $i  
+   }
+   sum < 0 { print NR, sum }
+   ```
+
+   </details>
+
+--------------------------------------------
+5. Anything goes
+
+Use the shortest command line to do the work (you will need to decide 
+which utility will make it short)
+
+   a. Print line 3 fileA, but with all white spaces removed from the line 
+
+   <details>
+   <summary><strong>Answer:</strong></summary>
+   
+   ```bash
+   sed -n '3 {s/[[:space:]]//gp}' fileA
+   ```
+
+   </details>
+
+
+   b. You have full permission for all your directories. For all your 
+directories where you also gave execute permission for group 
+and others: add the read permission for group and others 
+
+   <details>
+   <summary><strong>Answer:</strong></summary>
+   
+   ```bash
+   find ~ -type d -perm 711 | xargs chmod go+r
+   ```
+
+   </details>
+
+--------------------------------------------
