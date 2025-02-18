@@ -1,0 +1,118 @@
+Allan Hancock CCD;Allan Hancock;9631.62;908.43
+Antelope CCD;Antelope Valley;10554.90;14.63
+Barstow CCD;Barstow;1210.84;62.49
+Butte CCD;Butte;11580.48;1026.36
+Cabrillo CCD;Cabrillo;11103.14;198.96
+Cerritos CCD;Cerritos;18339.22;542.18
+Chabot-Las Positas CCD;Chabot Hayward;10950.39;58.65
+Chabot-Las Positas CCD;Las Positas;6824.94;0.00
+Chaffey CCD;Chaffey;14662.57;398.54
+Citrus CCD;Citrus;11445.72;413.09
+Coast CCD;Coastline;6100.65;297.94
+Coast CCD;Golden West;11193.37;17.89
+Coast CCD;Orange Coast;19773.40;52.30
+Compton CCD;Compton;6776.21;83.10
+Contra Costa CCD;Contra Costa;6941.34;92.63
+Contra Costa CCD;Diablo Valley;17549.74;6.81
+Contra Costa CCD;Los Medanos;8959.46;34.41
+Copper Mountain;Copper Mountain;1675.56;67.58
+Desert CCD;Desert;7776.18;938.57
+El Camino CCD;El Camino;19153.28;0.04
+Feather River CCD;Feather River;1729.10;46.06
+Foothill CCD;Deanza;20053.06;0.00
+Foothill CCD;Foothill;15269.55;191.54
+Gavilan CCD;Gavilan;4893.88;701.42
+Glendale CCD;Glendale;12664.61;5512.58
+Grossmont CCD;Cuyamaca;5858.90;263.22
+Grossmont CCD;Grossmont;13221.68;21.76
+Hartnell CCD;Hartnell;6875.44;12.31
+Imperial CCD;Imperial;7811.11;0.01
+Kern CCD;Bakersfield;13792.60;39.95
+Kern CCD;Cerro Coso;3733.00;14.87
+Kern CCD;Porterville;3251.11;0.00
+Lake Tahoe CCD;Lake Tahoe;1834.15;49.41
+Lassen CCD;Lassen;2407.85;23.05
+Long Beach CCD;Long Beach;20880.34;286.56
+Los Angeles CCD;East LA;20930.35;1367.96
+Los Angeles CCD;LA City;11972.98;639.74
+Los Angeles CCD;LA Harbor;7033.66;52.06
+Los Angeles CCD;LA ITV;1327.50;0.00
+Los Angeles CCD;LA Mission;6019.04;268.13
+Los Angeles CCD;LA Pierce;14008.29;269.98
+Los Angeles CCD;LA Swest;4380.59;452.45
+Los Angeles CCD;LA Trade;11274.58;387.99
+Los Angeles CCD;LA Valley;11764.28;615.43
+Los Angeles CCD;West LA;7015.21;258.86
+Los Rios CCD;American River;24511.57;0.00
+Los Rios CCD;Cosumnes River;10979.82;1.42
+Los Rios CCD;Folsom Lake;6157.29;0.00
+Los Rios CCD;Sacramento City;17440.92;184.45
+Marin CCD;Marin;4923.45;158.85
+Mendocino CCD;Mendocino;3315.82;139.05
+Merced CCD;Merced;9823.30;1210.02
+MiraCosta CCD;MiraCosta;10132.33;937.04
+Monterey CCD;Monterey;6385.35;450.84
+Mt. San Antonio CCD;Mt San Antonio;26541.38;6000.75
+Mt. San Jacinto CCD;Mt. San Jacinto;11076.32;618.33
+Napa CCD;Napa;5762.49;705.81
+North Orange CCD;Cypress;12983.48;0.00
+North Orange CCD;Fullerton;22115.35;0.00
+North Orange CCD;North Orange Adult;0.00;5439.90
+Ohlone CCD;Ohlone;9401.00;0.00
+Palo Verde CCD;Palo Verde;1745.59;77.22
+Palomar CCD;Palomar;19915.63;927.31
+Pasadena CCD;Pasadena;22985.41;1390.20
+Peralta CCD;Alameda;4291.34;0.00
+Peralta CCD;Berkeley City;4587.04;28.55
+Peralta CCD;Laney;8935.40;19.10
+Peralta CCD;Merritt;4404.89;98.71
+Rancho Santiago CCD;Santa Ana;16042.38;7764.93
+Rancho Santiago CCD;Santiago Canyon;8225.84;3403.98
+Redwoods CCD;Redwoods;5429.22;2.44
+Rio Hondo CCD;Rio Hondo;12671.98;613.86
+Riverside CCD;Moreno Valley;7159.84;14.85
+Riverside CCD;Norco College;6819.97;5.35
+Riverside CCD;Riverside;16141.18;101.36
+San Bernardino CCD;Crafton Hills;4601.62;0.00
+San Bernardino CCD;San Bernardino;10314.97;3.26
+San Diego CCD;San Diego Adult;0.00;9015.57
+San Diego CCD;San Diego City;11645.20;116.67
+San Diego CCD;San Diego Mesa;16569.64;86.32
+San Diego CCD;San Diego Miramar;7033.78;23.77
+San Francisco CCD;San Francisco;27502.11;0.00
+San Francisco CCD;San Francisco Ctrs;0.00;10759.49
+San Joaquin Delta CCD;San Joaquin Delta;16027.18;156.20
+San Jose CCD;Evergreen Valley;7640.54;37.93
+San Jose CCD;San Jose City;8072.95;7.22
+San Luis Obispo CCD;Cuesta;9061.14;200.73
+San Mateo CCD;Canada;4885.65;61.74
+San Mateo CCD;San Mateo;8687.61;0.00
+San Mateo CCD;Skyline;8570.50;69.86
+Santa Barbara CCD;Santa Barbara;15482.36;0.00
+Santa Barbara CCD;Santa Barbara Cont;0.00;1872.30
+Santa Clarita CCD;Canyons;13681.36;474.32
+Santa Monica CCD;Santa Monica;26708.96;593.63
+Sequoias CCD;Sequoias;10540.47;424.39
+Shasta Tehama CCD;Shasta;9815.76;178.49
+Sierra CCD;Sierra;15509.90;405.34
+Siskiyous CCD;Siskiyous;2290.88;70.74
+Solano CCD;Solano;9601.81;8.26
+Sonoma CCD;Santa Rosa;17476.22;3029.47
+South Orange County CCD;Irvine;15161.99;367.27
+South Orange County CCD;Saddleback;23585.42;1085.02
+Southwestern CCD;Southwestern;17303.42;103.30
+State Center CCD;Fresno City;19778.19;75.66
+State Center CCD;Reedley College;11435.28;82.58
+Ventura CCD;Moorpark;13761.80;19.66
+Ventura CCD;Oxnard;5118.59;0.00
+Ventura CCD;Ventura;10964.92;519.54
+Victor Valley CCD;Victor Valley;9858.99;150.74
+West Hills CCD;West Hills Coalinga;3145.47;69.00
+West Hills CCD;West Hills Lemoore;3148.44;357.61
+West Kern CCD;Taft;2463.00;45.13
+West Valley CCD;Mission;7750.42;215.75
+West Valley CCD;West Valley;9382.24;440.56
+Yosemite CCD;Columbia;2431.09;80.78
+Yosemite CCD;Modesto;14904.43;175.21
+Yuba CCD;Woodland;2125.96;26.98
+Yuba CCD;Yuba;6764.10;110.01
