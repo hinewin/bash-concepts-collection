@@ -210,11 +210,60 @@ awk '$3 !~ /s$/' fileA            # Field 3 does not end with `s`
     }
     ```
   - Associative arrays are dynamic and do not require explicit declaration.
+  - An associative array can be created with the strings "0", "1", "2", "3", etc. as keys. This allows the array to behave like a regular 1D array.
+  - Example: The `split` function divides a string into substrings and stores each substring as an element of an array using "1", "2", "3", etc. for the keys.
+    ```awk
+    myClass = "CIS 18B Adv Linux"
+    split(myClass, arr, " ")
+    { print arr[2] }  # This will print "18B"
+    ```
+  - Because the keys can be interpreted as numeric values, accessing `arr` is similar to accessing a regular 1D array.
 
-## Usage
+## Special Use of Associative Arrays
 
-- Command line: `awk 'pattern { action }' file_list`
-- Script format: `awk -f script_name file_list`
+- Associative arrays are very useful when we need to keep track of how many times an input event occurs, or keep track of the frequency of an input event.
+- Example: Suppose `vehicleData.txt` contains lines of data representing different events recorded by an autonomous vehicle:
+  ```
+  stop_sign_detected
+  pedestrian_crossing
+  stop_sign_detected
+  traffic_light_red
+  pedestrian_crossing
+  stop_sign_detected
+  ```
+  
+  The following AWK script will print how many times each event appears in the file:
+  ```awk
+  {arr[$0]++}
+  END {for(event in arr) print event, arr[event]}
+  ```
+
+- In the previous AWK script:
+  - `{arr[$0]++}` increments the count for each event.
+  - `END {for(event in arr) print event, arr[event]}` prints each event and its count.
+
+- All the frequency counting is done in one line of code: `arr[$0]++`
+  - As each event (line) is read in:
+    - If there is no key that matches the event (first occurrence):
+      - The event is stored as the key.
+      - The associated data value is incremented from 0 (default initialized value) to 1.
+    - If there is a key that matches the event (subsequent occurrence):
+      - The associated data of the existing key is found and incremented.
+
+- Example:
+  1. `stop_sign_detected` is read in for the 1st time:
+     - There is no key that matches `stop_sign_detected`:
+       - Create key `stop_sign_detected`
+       - Increment associated data from 0 to 1: `arr[stop_sign_detected] = 1`
+  2. `stop_sign_detected` is read in for the 2nd time:
+     - Key `stop_sign_detected` already exists:
+       - Find associated data and increment it: `arr[stop_sign_detected] = 2`
+
+- By the time all the input lines have been read in and the instruction `{arr[$0]++}` has been applied to each line, the associative array has keys that are unique events, and their associated data is the number of occurrences of each event.
+- Then the `END` block uses a `for in` loop to print the event and their number of occurrences:
+  ```awk
+  END {for(event in arr) print event, arr[event]}
+  ```
 
 ## Best Practices
 

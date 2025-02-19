@@ -54,6 +54,12 @@ directory, remove all links that point to dirA
 3. Use sed 
    
    a. fileA is a forwarded email that's been saved, where each line begins with > and 1 space.  For example:
+   ```
+   >  From: cnguyen@voyager.deanza.edu
+   >  Subject: Re: exam
+   >  The exam will be on Tuesday.
+   >  << Don't forget to log in and take the exam >>
+   ```
 
    Copy fileA to a new fileB but remove the "> " in front of each line
    and remove the first 12 lines of fileA
