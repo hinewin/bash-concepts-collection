@@ -18,10 +18,29 @@
 ### Additional Metacharacters
 
 1. `+`: One or more occurrences
+   ```bash
+   egrep 'go+d' file.txt    # Matches: good, goood, gooood
+   ```
+
 2. `?`: Zero or one occurrence
+   ```bash
+   egrep 'colou?r' file.txt
+   ```
+
 3. `|`: Alternation (OR)
+   ```bash
+   egrep 'cat|dog' file.txt
+   ```
+
 4. `()`: Grouping
+   ```bash
+   egrep 'web(page|site)' file.txt
+   ```
+
 5. `{}`: Specify exact number of occurrences
+   ```bash
+   egrep '[0-9]{3}' file.txt    # Matches: 123, 456, etc.
+   ```
 
 ### Character Classes
 
