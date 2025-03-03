@@ -1,12 +1,6 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
 
-# 
 
----
-
-# Convert this powerpoint into text format
-
-## Introduction to make
+# Introduction to make
 
 make is a utility that helps manage file dependencies and automate the build process for software projects. It was originally created to assist software developers in building executable files, but has since found wider applications in system administration and other tasks involving file management.
 
