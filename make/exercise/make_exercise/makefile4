@@ -1,0 +1,15 @@
+OBJ = printing.o name.o hello.o 
+EXE = hello
+CC = g++
+.PHONY: long list
+
+$(EXE) : $(OBJ)
+	$(CC) -o $(EXE) $(OBJ)
+
+%.o : %.cpp 
+	$(CC) -c $^
+
+long:
+	@ls -l
+
+list : long $(EXE)

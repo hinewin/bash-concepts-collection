@@ -1,0 +1,12 @@
+hello : printing.o name.o hello.o 
+	g++ -o hello printing.o name.o hello.o
+
+hello.o : hello.cpp 
+	g++ -c hello.cpp
+
+name.o : name.cpp 
+	g++ -c name.cpp
+
+printing.o : printing.cpp 
+	g++ -c printing.cpp
+

@@ -1,0 +1,146 @@
+# Module 5 Exercise Solution
+
+## Setup
+Make a copy of the `make_exercise` directory.
+This directory contains all the source and header files for the exercise.
+
+## Part A: Building an Executable on Command Line
+
+### 1. List Program Files
+**Task**: View the two different hello programs
+- `helloWorld.cpp`: standalone program that prints "hello world"
+- `hello.cpp`: works with `name.cpp` and `printing.cpp` to create an interactive greeting
+
+**Solution**:
+```bash
+ls
+```
+
+### 2. View Source Files
+**Task**: Examine how the files work together
+
+**Solution**:
+```bash
+# View main program file
+cat hello.cpp     # calls functions of printing.cpp and name.cpp
+
+# View supporting files
+cat printing.cpp  # contains 2 different print functions
+cat name.cpp      # calls function of printing.cpp
+```
+
+### 3. Single-File Compilation
+**Task**: Create and run executable from `helloWorld.cpp`
+
+**Solution**:
+```bash
+# Compile
+g++ helloWorld.cpp
+
+# Run
+./a.out
+```
+
+### 4. Multi-File Compilation
+**Task**: Build executable from multiple source files
+
+**Solution**:
+```bash
+# Compile individual files
+g++ -c printing.cpp
+g++ -c name.cpp
+g++ -c hello.cpp
+
+# Link objects into executable
+g++ -o hello printing.o name.o hello.o
+
+# Run
+./hello
+```
+
+### 5. Modify Source Without Editor
+**Task**: Change "Hello" to "Hi" in `printing.cpp`
+
+**Solution**:
+```bash
+sed -i 's/"Hello/"Hi/' printing.cpp
+```
+
+### 6. Rebuild After Changes
+**Task**: Update executable with new changes
+
+**Solution**:
+```bash
+# Test current executable
+./hello
+
+# Rebuild with changes
+g++ -c printing.cpp
+g++ -o hello printing.o name.o hello.o
+```
+
+## Part B: Using a Makefile
+
+### 1. Create Basic Makefile
+**Task**: Create makefile to replicate Part A, Step 4
+
+**Solution**: See `makefile1`
+
+### 2. Rebuild with Make
+**Task**: Process for building new executable
+
+**Solution**:
+```bash
+rm *.o
+make
+```
+
+### 3. Single File Compilation
+**Task**: Compile individual source file
+
+**Solution**:
+```bash
+touch name.cpp
+make name.o
+```
+
+### 4. Enhance Makefile with Macros
+**Task**: Add macros for:
+- List of .o files
+- Executable filename
+- Compiler name
+- Common suffix rule
+
+**Solution**: See `makefile2`
+
+### 5. Test Enhanced Makefile
+**Task**: Build with different executable name
+
+**Solution**:
+```bash
+# Clean and build default
+rm *.o
+make
+
+# Build with custom name
+make EXE=newExe
+```
+
+### 6. Add Listing Target
+**Task**: Add long listing target
+
+**Solution**: See `makefile3`
+
+### 7. Silent Long Listing
+**Task**: Create and use silent long listing
+
+**Solution**:
+```bash
+touch long
+make long
+```
+
+### 8. Combined List and Build Target
+**Task**: Create target to list files and build if needed
+
+**Solution**: See `makefile4`
